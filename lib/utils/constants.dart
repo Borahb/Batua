@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 // ignore: non_constant_identifier_names
 Color primary_color = const Color(0xFFf5f6fb);
+Color lightVioletColor = const Color(0xff9d92f0);
 // ignore: non_constant_identifier_names
 Color secondary_color = const Color(0xFF4731ee);
 // ignore: non_constant_identifier_names
@@ -35,4 +36,6 @@ class RouteConstants {
   static const SIGNUP_SCREEN = '/signup-screen';
   static const HOME_SCREEN = '/home-screen';
   static const AUTH_WRAPPER = '/auth-wrapper';
+  static const createGoalPage = '/create-goal-page';
+  static const SettingsScreen = '/settings-screen';
 }

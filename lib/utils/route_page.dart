@@ -1,8 +1,10 @@
-import 'package:batua/auth_wrapper.dart';
-import 'package:batua/home_screen.dart';
-import 'package:batua/login_screen.dart';
-import 'package:batua/sign_up.dart';
-import 'package:batua/user_details_screen.dart';
+import 'package:batua/Services/auth_wrapper.dart';
+import 'package:batua/UI/create_goal_page.dart';
+import 'package:batua/UI/home_screen.dart';
+import 'package:batua/UI/login_screen.dart';
+import 'package:batua/UI/settings_screen.dart';
+import 'package:batua/UI/sign_up.dart';
+import 'package:batua/UI/user_details_screen.dart';
 import 'package:batua/utils/constants.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -28,6 +30,14 @@ class RoutePage {
       case RouteConstants.AUTH_WRAPPER:
         return PageRouteBuilder(
           pageBuilder: (ctx, firstAni, secondAni) => AuthWrapper(),
+        );
+      case RouteConstants.createGoalPage:
+        return PageRouteBuilder(
+          pageBuilder: (ctx, firstAni, secondAni) => CreateGoalPage(),
+        );
+      case RouteConstants.SettingsScreen:
+        return PageRouteBuilder(
+          pageBuilder: (ctx, firstAni, secondAni) => SettingsScreen(),
         );
     }
   }
