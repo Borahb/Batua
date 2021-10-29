@@ -1,6 +1,7 @@
+
+
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:batua/utils/constants.dart';
 
 class HomeDrawer extends StatelessWidget {
   @override
@@ -10,6 +11,7 @@ class HomeDrawer extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: [
           DrawerHeader(
+            decoration: BoxDecoration(color: Theme.of(context).accentColor),
             child: Stack(
               // alignment: Alignment.center,
               children: [
@@ -20,7 +22,7 @@ class HomeDrawer extends StatelessWidget {
                       height: 100,
                       width: 280,
                       decoration: BoxDecoration(
-                          color: secondary_color,
+                          color: Theme.of(context).accentColor,
                           borderRadius: BorderRadius.circular(20)),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -77,8 +79,8 @@ class HomeDrawer extends StatelessWidget {
 }
 
 class DrawerTile extends StatelessWidget {
-  String name;
-  IconData icon;
+  String? name;
+  IconData? icon;
   DrawerTile({this.name, this.icon});
 
   @override
@@ -87,7 +89,7 @@ class DrawerTile extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: ListTile(
         leading: Icon(icon),
-        title: Text(name),
+        title: Text(name!),
       ),
     );
   }

@@ -1,3 +1,5 @@
+
+
 import 'package:batua/Services/authentication_service.dart';
 import 'package:batua/UI/loading.dart';
 import 'package:batua/UI/user_details_screen.dart';
@@ -140,9 +142,9 @@ class SignUpScreenState extends State<SignUpScreen> {
                             setState(() => _email = value);
                           },
                           validator: (value) =>
-                              value.isEmpty ? 'Enter an Email' : null,
+                              value!.isEmpty ? 'Enter an Email' : null,
                           decoration: InputDecoration(
-                              hintText: 'Type something...',
+                              hintText: 'Enter your email',
                               fillColor: textField_color,
                               filled: true,
                               focusedBorder: OutlineInputBorder(
@@ -179,7 +181,7 @@ class SignUpScreenState extends State<SignUpScreen> {
                         child: TextFormField(
                           obscureText: ishidden,
                           controller: _passwordController,
-                          validator: (val) => val.length < 6
+                          validator: (val) => val!.length < 6
                               ? 'Enter a password 6+ chars long'
                               : null,
                           onChanged: (value) {
@@ -280,7 +282,7 @@ class SignUpScreenState extends State<SignUpScreen> {
                   // ignore: deprecated_member_use
                   child: TextButton(
                     onPressed: () async {
-                      if (_formkey.currentState.validate()) {
+                      if (_formkey.currentState!.validate()) {
                        
                         dynamic result = await _auth
                             .registerWithEmailAndPassword(_email, _password);
@@ -300,7 +302,7 @@ class SignUpScreenState extends State<SignUpScreen> {
                                     style: TextStyle(color: Colors.white),
                                   ),
                                   content: Text(
-                                    "Verification Link Sent to Your Registered Mail\nPlease Verify and Log-In",
+                                    "Verification Link has been sent to Your Registered Mail\nPlease Verify and Log-In",
                                     style: TextStyle(color: Colors.white),
                                   ),
                                 );
@@ -316,7 +318,7 @@ class SignUpScreenState extends State<SignUpScreen> {
                                     style: TextStyle(color: Colors.white),
                                   ),
                                   content: Text(
-                                    "Email Already Exist",
+                                    "Email Already Exists",
                                     style: TextStyle(color: Colors.white),
                                   ),
                                 );

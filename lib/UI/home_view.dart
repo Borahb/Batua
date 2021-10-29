@@ -1,3 +1,5 @@
+
+
 import 'package:batua/Services/facebook_auth.dart';
 import 'package:batua/UI/widgets/drawer.dart';
 import 'package:batua/utils/constants.dart';
@@ -19,7 +21,7 @@ class Home extends StatelessWidget {
       ),
       body:
         Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 8.0),
           child: Column(
             children: [
               Container(
